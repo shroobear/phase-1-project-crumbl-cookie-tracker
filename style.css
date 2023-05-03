@@ -1,0 +1,44 @@
+body {
+    background-color: pink
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto; 
+  }
+
+img {
+    display: flex;
+    max-width: 200px;
+    align-items: center;
+    margin: auto;
+}
+
+#cookie-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.cookie-card {
+    height: auto;
+    border: 4px solid black;
+    padding: 20px;
+    align-items: center;
+}
+
+#crumbl-logo {
+    display: flex;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.subhead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
