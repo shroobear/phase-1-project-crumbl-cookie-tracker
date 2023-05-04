@@ -1,37 +1,70 @@
-fetch("http://localhost:3000/cookies")
-.then(r => r.json())
-.then(cookie => cardBuilder(cookie))
-
+//create DOM element to contain each cookie
 const cardBuilder = (cookie) => {
-    console.log(cookie)
-    cookie.forEach(cardInfo => {
-        const cardContainer = document.getElementById("cookie-container")
-      const cookieCard = document.createElement("div")
-      cookieCard.classList.add("cookie-card")
-      const img = document.createElement("img")
-      img.src = cardInfo.image
-      const flavor = document.createElement("h3")
-      flavor.innerText = cardInfo.flavor
-      const p = document.createElement("p")
-      p.textContent = cardInfo.description
-      const selectArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-      const ratingLabel = document.createElement("span")
-      ratingLabel.innerText = "Rating:"
-      const userRating = document.createElement("select");
-      for(let i = 0; i < 10; i++) {
-          let option = document.createElement("option");
-          option.value = selectArray[i];
-          option.text = selectArray[i];
-          userRating.appendChild(option);
-      }
-      userRating.value = cardInfo.rating;
-      
-      
-      cookieCard.appendChild(flavor)
-      cookieCard.appendChild(img)
-      cookieCard.appendChild(p)
-      cookieCard.appendChild(ratingLabel)
-      cookieCard.appendChild(userRating)
-      cardContainer.appendChild(cookieCard)
+        let cardContainer = document.getElementById("cookie-container")
+        let cookieCard = document.createElement("div")
+        cookieCard.classList.add("cookie-card")
+
+        let img = document.createElement("img")
+        img.src = cookie.image
+
+        let flavor = document.createElement("h3")
+        flavor.innerText = cookie.flavor
+
+        let p = document.createElement("p")
+        p.textContent = cookie.description
+
+        const selectArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const ratingLabel = document.createElement("span")
+        ratingLabel.innerText = "Rating:"
+        const userRating = document.createElement("select");
+        for (let i = 0; i < 10; i++) {
+            let option = document.createElement("option");
+            option.value = selectArray[i];
+            option.text = selectArray[i];
+            userRating.appendChild(option);
+        }
+        userRating.value = cookie.rating;
+
+
+        cookieCard.appendChild(flavor)
+        cookieCard.appendChild(img)
+        cookieCard.appendChild(p)
+        cookieCard.appendChild(ratingLabel)
+        cookieCard.appendChild(userRating)
+        cardContainer.appendChild(cookieCard)
+}
+// fetch cookies, submit new cookies
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("http://localhost:3000/cookies")
+    .then(r => r.json())
+    .then(cookies => cookies.forEach(cookie => cardBuilder(cookie)))
+    const form = document.querySelector("form.cookie-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = Object.fromEntries(new FormData(e.target));
+        submitForm(formData)
     })
-  }
+})
+
+
+//callback for submitting cookies
+
+function submitForm(newCookie) {
+    fetch('http://localhost:3000/cookies', {
+        method: "POST",
+        headers:
+        {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        },
+        body: JSON.stringify({
+            ...newCookie,
+            "flavor": newCookie.flavor,
+            "description": newCookie.description,
+            "rating": newCookie.rating,
+            "image": newCookie.image
+        })
+    })
+    .then(r => r.json())
+    .then(responseCookie => cardBuilder(responseCookie))
+}
