@@ -18,34 +18,36 @@
         <!-- Javascript will add cookie cards here -->
     </div>
 
-    <form id="cookie-form">
-        <label for="cookie-name">Cookie:</label>
-        <input type="text" id="cookie-name" name="cookie-name"><br>
+    <div class="container">
+        <form class="cookie-form">
+            <label for="cookie-name">Cookie:</label>
+            <input type="text" id="cookie-name" name="name"><br />
 
-        <label for="cookie-description">Description:</label>
-        <input type="text" id="cookie-description" name="cookie-description"><br>
+            <label for="cookie-description">Description:</label>
+            <input type="text" id="cookie-description" name="description"><br />
 
-        <label for="cookie-rating">Rating:</label>
+            <label for="cookie-rating">Rating:</label>
 
-        <select name="rating" id="cookie-rating">
-            <option value="">--Please Select a Rating--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select><br>
+            <select name="rating" id="cookie-rating">
+                <option value="">--Please Select a Rating--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br />
 
-        <label for="cookie-image">Upload Image:</label>
-        <input type="file" id="cookie-image" name="cookie-image" accept="image/png, image/jpeg, image/gif, image/svg"><br>
+            <label for="image">Upload Image:</label>
+            <input type="text" placeholder="Enter image URL here" id="cookie-image" name="cookie-image"><br>
 
-        <input type="submit" id="form-submit" name="form-submit">
-    </form>
+            <input type="submit" id="form-submit" name="form-submit">
+        </form>
+    </div>
 
 </body>
 
