@@ -1,123 +1,109 @@
-let allCookies = []
-//create DOM element to contain each cookie
-const cardBuilder = (cookie) => {
-    let cardContainer = document.getElementById("cookie-container")
-    let cookieCard = document.createElement("div")
-    cookieCard.classList.add("cookie-card")
-
-    let img = document.createElement("img")
-    img.src = cookie.image
-
-    let flavor = document.createElement("h3")
-    flavor.innerText = cookie.flavor
-
-    let p = document.createElement("p")
-    p.textContent = cookie.description
-
-    const selectArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    const ratingLabel = document.createElement("span")
-    ratingLabel.innerText = "Rating:"
-    const userRating = document.createElement("select");
-    for (let i = 0; i < 10; i++) {
-        let option = document.createElement("option");
-        option.value = selectArray[i];
-        option.text = selectArray[i];
-        userRating.appendChild(option);
-    }
-    userRating.value = cookie.rating;
-    // Event listener for updating rating in db.json
-    userRating.addEventListener("change", (e) => {
-    if (e.target === userRating) {
-        e.preventDefault()
-        const newRating = e.target.value;
-        const cookieId = cookie.id;
-        fetch(`http://localhost:3000/Cookies/${cookieId}`, {
-            method: "PATCH",
-            headers: {
-                "Content-type": "application/json"
-            },
-            body: JSON.stringify({
-                rating: newRating
-            })
-        })
-        .then(r => r.json())
-        .then(updatedCookie => console.log(updatedCookie))
-        .catch(error => console.log(error))
-    }
-});
-
-
-cookieCard.appendChild(flavor)
-cookieCard.appendChild(img)
-cookieCard.appendChild(p)
-cookieCard.appendChild(ratingLabel)
-cookieCard.appendChild(userRating)
-cardContainer.appendChild(cookieCard)
-}
 // fetch cookies, submit new cookies
 document.addEventListener("DOMContentLoaded", () => {
+    let allCookies = []
+    let cardContainer = document.getElementById("cookie-container")
+    //create DOM element to contain each cookie
+    const cardBuilder = (cookie) => {
+        let cookieCard = document.createElement("div")
+        cookieCard.classList.add("cookie-card")
+
+        let img = document.createElement("img")
+        img.src = cookie.image
+
+        let flavor = document.createElement("h3")
+        flavor.innerText = cookie.flavor
+
+        let p = document.createElement("p")
+        p.textContent = cookie.description
+
+        const selectArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const ratingLabel = document.createElement("span")
+        ratingLabel.innerText = "Rating:"
+        const userRating = document.createElement("select");
+        for (let i = 0; i < 10; i++) {
+            let option = document.createElement("option");
+            option.value = selectArray[i];
+            option.text = selectArray[i];
+            userRating.appendChild(option);
+        }
+        userRating.value = cookie.rating;
+        // Event listener for updating rating in db.json
+        userRating.addEventListener("change", (e) => {
+            if (e.target === userRating) {
+                e.preventDefault()
+                const newRating = e.target.value;
+                const cookieId = cookie.id;
+                fetch(`http://localhost:3000/Cookies/${cookieId}`, {
+                    method: "PATCH",
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        rating: newRating
+                    })
+                })
+                    .then(r => r.json())
+                    .then(updatedCookie => console.log(updatedCookie))
+                    .catch(error => console.log(error))
+            }
+        });
+
+
+        cookieCard.appendChild(flavor)
+        cookieCard.appendChild(img)
+        cookieCard.appendChild(p)
+        cookieCard.appendChild(ratingLabel)
+        cookieCard.appendChild(userRating)
+        cardContainer.appendChild(cookieCard)
+    }
+
+    //callback for submitting cookies
+
+    function submitForm(newCookie) {
+        fetch('http://localhost:3000/cookies', {
+            method: "POST",
+            headers:
+            {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                ...newCookie,
+                "flavor": newCookie.flavor,
+                "description": newCookie.description,
+                "rating": newCookie.rating,
+                "image": newCookie.image
+            })
+        })
+            .then(r => r.json())
+            .then(responseCookie => cardBuilder(responseCookie))
+    }
     fetch("http://localhost:3000/cookies")
         .then(r => r.json())
         .then(cookies => {
-            cookies.forEach(cookie => cardBuilder(cookie)) 
+            cookies.forEach(cookie => cardBuilder(cookie))
             allCookies = cookies
         })
-        //global variable for all cookies to modify by search here
+    //global variable for all cookies to modify by search here
     const form = document.querySelector("form.cookie-form");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         const formData = Object.fromEntries(new FormData(e.target));
         submitForm(formData)
     })
-})
+
+    //add search function
+    //function that tracks whenever user types in search and changes DOM accordingly
+    //independent of previous code
 
 
-//callback for submitting cookies
+    document.getElementById("search-bar-input").addEventListener("input", filterCookies);
 
-function submitForm(newCookie) {
-    fetch('http://localhost:3000/cookies', {
-        method: "POST",
-        headers:
-        {
-            "Content-Type": "application/json",
-            Accept: "application/json"
-        },
-        body: JSON.stringify({
-            ...newCookie,
-            "flavor": newCookie.flavor,
-            "description": newCookie.description,
-            "rating": newCookie.rating,
-            "image": newCookie.image
-        })
-    })
-        .then(r => r.json())
-        .then(responseCookie => cardBuilder(responseCookie))
-}
+    function filterCookies(e) {
+        cardContainer.innerHTML = ""
+        let filteredCookies = allCookies.filter(cookie => cookie.flavor.toLowerCase().includes(e.target.value.toLowerCase()))
+        filteredCookies.forEach(cookie => cardBuilder(cookie))
 
-//add search function
-//function that tracks whenever user types in search and changes DOM accordingly
-//independent of previous code
-
-document.addEventListener("DOMContentLoaded", function () {
-    const searchBarInput = document.getElementById("search-bar-input");
-
-    searchBarInput.addEventListener("input", filterCookies);
-
-    function filterCookies() {
-        const searchValue = searchBarInput.value.toLowerCase();
-
-        const cookieCards = document.getElementsByClassName("cookie-card");
-
-        for (let i = 0; i < cookieCards.length; i++) {
-            const cookieCard = cookieCards[i];
-            const cookieNameElement = cookieCard.getElementsByTagName("h3")[0];
-            const cookieName = cookieNameElement.textContent || cookieNameElement.innerText;
-
-            if(cookieName.toLowerCase().indexOf(searchValue) > -1) {
-                cookieCard.style.display = "";
-            } else {
-                cookieCard.style.display = "none";
-            }
-        }
     }
 })
+
