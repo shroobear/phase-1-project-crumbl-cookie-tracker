@@ -1,3 +1,4 @@
+let allCookies = []
 //create DOM element to contain each cookie
 const cardBuilder = (cookie) => {
     let cardContainer = document.getElementById("cookie-container")
@@ -24,9 +25,11 @@ const cardBuilder = (cookie) => {
         userRating.appendChild(option);
     }
     userRating.value = cookie.rating;
+    console.log(userRating)
     // Event listener for updating rating in db.json
     userRating.addEventListener("change", (e) => {
     if (e.target === userRating) {
+        e.preventDefault()
         const newRating = e.target.value;
         const cookieId = cookie.id;
         fetch(`http://localhost:3000/Cookies/${cookieId}`, {
@@ -56,7 +59,11 @@ cardContainer.appendChild(cookieCard)
 document.addEventListener("DOMContentLoaded", () => {
     fetch("http://localhost:3000/cookies")
         .then(r => r.json())
-        .then(cookies => cookies.forEach(cookie => cardBuilder(cookie)))
+        .then(cookies => {
+            cookies.forEach(cookie => cardBuilder(cookie)) 
+            allCookies = cookies
+        })
+        //global variable for all cookies to modify by search here
     const form = document.querySelector("form.cookie-form");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -87,3 +94,5 @@ function submitForm(newCookie) {
         .then(r => r.json())
         .then(responseCookie => cardBuilder(responseCookie))
 }
+
+//add search function
