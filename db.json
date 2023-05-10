@@ -73,9 +73,16 @@
     {
       "flavor": "Red Velvet",
       "description": "CRUMBL red velvet chocolate chip cookies are the perfect combination of a red velvet cookie and a chocolate chip cookie. They are thick, soft, chewy, and packed with white chocolate chips. With each bite from these red velvet white chip cookies, you’ll fall deeper and deeper back into your fondest childhood memories!",
-      "rating": "7",
+      "rating": "4",
       "image": "https://lifestyleofafoodie.com/wp-content/uploads/2021/06/CRUMBL-Red-Velvet-White-Chip-Cookies-21-of-26.jpg",
       "id": 11
+    },
+    {
+      "flavor": "Chocolate Chip",
+      "description": "Just like grandma used to make",
+      "rating": "5",
+      "image": "https://lifestyleofafoodie.com/wp-content/uploads/2021/06/CRUMBL-Red-Velvet-White-Chip-Cookies-21-of-26.jpg",
+      "id": 12
     }
   ]
 }
