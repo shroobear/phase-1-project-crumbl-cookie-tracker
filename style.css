@@ -25,6 +25,7 @@ img {
 
 .cookie-card {
     height: auto;
+    width: auto;
     border: 4px solid black;
     padding: 20px;
     align-items: center;
