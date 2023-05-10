@@ -25,7 +25,6 @@ const cardBuilder = (cookie) => {
         userRating.appendChild(option);
     }
     userRating.value = cookie.rating;
-    console.log(userRating)
     // Event listener for updating rating in db.json
     userRating.addEventListener("change", (e) => {
     if (e.target === userRating) {
@@ -96,3 +95,29 @@ function submitForm(newCookie) {
 }
 
 //add search function
+//function that tracks whenever user types in search and changes DOM accordingly
+//independent of previous code
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBarInput = document.getElementById("search-bar-input");
+
+    searchBarInput.addEventListener("input", filterCookies);
+
+    function filterCookies() {
+        const searchValue = searchBarInput.value.toLowerCase();
+
+        const cookieCards = document.getElementsByClassName("cookie-card");
+
+        for (let i = 0; i < cookieCards.length; i++) {
+            const cookieCard = cookieCards[i];
+            const cookieNameElement = cookieCard.getElementsByTagName("h3")[0];
+            const cookieName = cookieNameElement.textContent || cookieNameElement.innerText;
+
+            if(cookieName.toLowerCase().indexOf(searchValue) > -1) {
+                cookieCard.style.display = "";
+            } else {
+                cookieCard.style.display = "none";
+            }
+        }
+    }
+})
