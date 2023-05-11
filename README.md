@@ -21,9 +21,11 @@ To run this project, you need a web browser and a code editor.
 
 ### Installing
 
-1. Clone the repository or download the zip file.
+1. Clone the repository to your local environment.
 2. Open the project folder in your code editor.
-3. Open the `index.html` file in your web browser.
+3. Open command terminal in the file's directory.
+4. run 'npm start' in the console to launch the cookie database in a json-server.
+5. Open the `index.html` file in your web browser.
 
 ### Usage
 
