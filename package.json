@@ -1,0 +1,11 @@
+{
+  "name": "phase-1-project-crumbl-cookie-tracker",
+  "version": "1.0.0",
+  "description": "Welcome to your very own private collection of flavors and ratings from crumbl cookies. Anyone who is familiar knows how much crumbl has changed the game for bakeries around the world. However, with a constantly rotating weekly menu, it can be hard to remember which cookies were your favorites. That's exactly the problem that this application is able to solve. Now, you have no need to worry about forgetting a delicious cookie, or buying one that you have had previously that you didn't particularly care for.",
+  "main": "script.js",
+  "scripts": {
+    "start": "json-server --watch db.json"
+  },
+  "author": "",
+  "license": "ISC"
+}
