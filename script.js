@@ -1,4 +1,3 @@
-// fetch cookies, submit new cookies
 document.addEventListener("DOMContentLoaded", () => {
     let allCookies = []
     let cardContainer = document.getElementById("cookie-container")
@@ -6,16 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardBuilder = (cookie) => {
         let cookieCard = document.createElement("div")
         cookieCard.classList.add("cookie-card")
-
+        //cookie picture
         let img = document.createElement("img")
         img.src = cookie.image
-
+        //cookie flavor
         let flavor = document.createElement("h3")
         flavor.innerText = cookie.flavor
-
+        //cookie description
         let p = document.createElement("p")
         p.textContent = cookie.description
-
+        //rating selection
         const selectArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         const ratingLabel = document.createElement("span")
         ratingLabel.innerText = "Rating:"
@@ -42,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         rating: newRating
                     })
                 })
-                    .then(r => r.json())
-                    .then(updatedCookie => console.log(updatedCookie))
-                    .catch(error => console.log(error))
+                .then(r => r.json())
+                .then(updatedCookie => console.log(updatedCookie))
+                .catch(error => console.log(error))
             }
         });
-
-
+        
+        
         cookieCard.appendChild(flavor)
         cookieCard.appendChild(img)
         cookieCard.appendChild(p)
@@ -56,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
         cookieCard.appendChild(userRating)
         cardContainer.appendChild(cookieCard)
     }
-
-    //callback for submitting cookies
-
+    
+    // fetch cookies, submit new cookies
+    
     function submitForm(newCookie) {
         fetch('http://localhost:3000/cookies', {
             method: "POST",
@@ -75,14 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 "image": newCookie.image
             })
         })
-            .then(r => r.json())
-            .then(responseCookie => cardBuilder(responseCookie))
+        .then(r => r.json())
+        .then(responseCookie => cardBuilder(responseCookie))
     }
     fetch("http://localhost:3000/cookies")
-        .then(r => r.json())
-        .then(cookies => {
-            cookies.forEach(cookie => cardBuilder(cookie))
-            allCookies = cookies
+    .then(r => r.json())
+    .then(cookies => {
+        cookies.forEach(cookie => cardBuilder(cookie))
+        allCookies = cookies
         })
     //global variable for all cookies to modify by search here
     const form = document.querySelector("form.cookie-form");
