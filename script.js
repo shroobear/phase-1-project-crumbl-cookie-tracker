@@ -97,13 +97,11 @@ document.addEventListener("DOMContentLoaded", () => {
     //independent of previous code
 
 
-    document.getElementById("search-bar-input").addEventListener("input", filterCookies);
-
-    function filterCookies(e) {
+    document.getElementById("search-bar-input").addEventListener("input", (e)=>{
         cardContainer.innerHTML = ""
         let filteredCookies = allCookies.filter(cookie => cookie.flavor.toLowerCase().includes(e.target.value.toLowerCase()))
         filteredCookies.forEach(cookie => cardBuilder(cookie))
+    });
 
-    }
 })
 
