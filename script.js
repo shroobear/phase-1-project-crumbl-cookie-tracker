@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetch cookies, submit new cookies
     
     function submitForm(newCookie) {
-        fetch('http://localhost:3000/cookies', {
+        fetch('https://crumbl-cookie-tracker-db.onrender.com/Cookies', {
             method: "POST",
             headers:
             {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(r => r.json())
         .then(responseCookie => cardBuilder(responseCookie))
     }
-    fetch("http://localhost:3000/cookies")
+    fetch("https://crumbl-cookie-tracker-db.onrender.com/Cookies")
     .then(r => r.json())
     .then(cookies => {
         cookies.forEach(cookie => cardBuilder(cookie))
