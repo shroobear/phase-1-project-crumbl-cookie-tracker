@@ -25,25 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
             option.text = selectArray[i];
             userRating.appendChild(option);
         }
-        userRating.value = cookie.rating;
-        // Event listener for updating rating in db.json
+        // Set default value if user has not selected a rating
+        userRating.value = "N/A"
+        // Retrieve rating from localStorage
+        const storedRating = localStorage.getItem(`rating-${cookie.id}`);
+        if (storedRating) {
+            userRating.value = storedRating;
+        }
+        // Event listener for updating rating in localStorage
         userRating.addEventListener("change", (e) => {
             if (e.target === userRating) {
                 e.preventDefault()
                 const newRating = e.target.value;
                 const cookieId = cookie.id;
-                fetch(`http://localhost:3000/Cookies/${cookieId}`, {
-                    method: "PATCH",
-                    headers: {
-                        "Content-type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        rating: newRating
-                    })
-                })
-                .then(r => r.json())
-                .then(updatedCookie => console.log(updatedCookie))
-                .catch(error => console.log(error))
+
+                // Update localStorage with new rating
+                localStorage.setItem(`rating-${cookieId}`, newRating);
             }
         });
         
