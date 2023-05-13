@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ...newCookie,
                 "flavor": newCookie.flavor,
                 "description": newCookie.description,
-                "rating": newCookie.rating,
                 "image": newCookie.image
             })
         })
