@@ -71,6 +71,12 @@
       "description": "Just like grandma used to make",
       "image": "https://media2.cltampa.com/cltampa/imager/u/original/13016664/crumbl.jpeg",
       "id": 12
+    },
+    {
+      "flavor": "Pink Sugar",
+      "description": "A new take on an old classic.",
+      "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/rockcms/2022-04/cookie-funeral-kb-2x1-220422-61df85.jpg",
+      "id": 13
     }
   ]
 }
