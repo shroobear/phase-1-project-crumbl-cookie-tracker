@@ -3,84 +3,72 @@
     {
       "flavor": "Cookies and Cream Milkshake",
       "description": "A chilly, layered cookies & cream landslide from the cookie to the frosting to the decorative mini cookie on top.",
-      "rating": 9,
       "image": "https://pbs.twimg.com/amplify_video_thumb/1650288441152897024/img/XubMy5VfG5Be_DTU.jpg:large",
       "id": 1
     },
     {
       "flavor": "Raspberry Cheesecake",
       "description": "A luscious three-layer treat including a chilled graham cracker cookie, vanilla cream cheese frosting, and house-made raspberry jam.",
-      "rating": 5,
       "image": "https://pbs.twimg.com/ext_tw_video_thumb/1558965676538089472/pu/img/1hrK3d6KmnboxIqT?format=jpg&name=4096x4096",
       "id": 2
     },
     {
       "flavor": "Cinnamon Roll",
       "description": "Just like grandma makes—a vanilla sugar cookie topped with cinnamon roll filling.",
-      "rating": 9,
       "image": "https://whisk-res.cloudinary.com/image/upload/g_auto,g_auto,c_fill,q_60,f_auto,h_600,w_800/v1624033407/recipe/d1b3b3fa975a35b2e6ff542fd9b40c32.jpg",
       "id": 3
     },
     {
       "flavor": "White Chip Macadamia Nut",
       "description": "The classic cookie filled with layers of creamy white drops and buttery macadamia nuts.",
-      "rating": 10,
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhpT7vgDz3y1OmcYTSGGfGCarX1vAlY0sk00QUQVUs_YFkqvESGf_bOuf9j0g4YNPVbuUYqCL-rxqcrTCY3gJ1fD8Y-jCdblcjRdgE6kbJFVOfuLwfbUUv-junLlZ9cQlAu0y_TLRb0FrNPTzy2z3x-hFIA_IH7oGRM0L61jLUjU7-k0rrKzUXT8DkQ/w1200-h630-p-k-no-nu/crumbl-macadamia-nut-cookie.jpg",
       "id": 4
     },
     {
       "flavor": "Chocolate Crumb (ft. OREO)",
       "description": "Rich Oreo-filled chocolate cookies topped with smooth vanilla cream cheese frosting and a sprinkle of Oreo crumbs.",
-      "rating": 8,
       "image": "https://blogger.googleusercontent.com/img/a/AVvXsEhH3MMM-hDCnuH4sj12b9LxUMifOt6pEdgftLCvM9RPCwmprXAh62MT-9EE_UjhchU_Ai0SRexo8XWIqprJlJfqNW-SHsLaCvgG26sJHzzeVHmeCUnu3ralTpHc_qyTJ19A266VG8WUti4nJK8WlxulAcsGN6wCWJxJIaHYOUzSch3LdB2Joq3EKaWH=w1200-h630-p-k-no-nu",
       "id": 5
     },
     {
       "flavor": "Maple Bacon",
       "description": "A fluffy buttermilk cookie swirled with thick maple frosting, a sprinkle of real crispy bacon bits, and a drizzle of maple syrup.",
-      "rating": 9,
       "image": "https://cdn.trendhunterstatic.com/thumbs/499/maple-bacon-cookie.jpeg?auto=webp",
       "id": 6
     },
     {
       "flavor": "Mint Chip Ice Cream",
       "description": "A chilled sugar cookie with mini semi-sweet chips, a refreshing mint mousse, and a dollop of whipped cream.",
-      "rating": 6,
       "image": "https://pbs.twimg.com/media/FR2ZO4MVgAAbuW5?format=jpg&name=4096x4096",
       "id": 7
     },
     {
       "flavor": "Cookie Dough",
       "description": "A brown sugar cookie topped with cookie dough buttercream and chunks of delicious cookie dough pieces.",
-      "rating": 9,
       "image": "https://cookingwithkarli.com/wp-content/uploads/2021/09/cookie-dough-cookie-4.jpg",
       "id": 8
     },
     {
       "flavor": "Blueberry Crumb Cake",
       "description": "A warm lemony graham cookie with pops of blueberries and a tangy lemon drizzle.",
-      "rating": 8,
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiKGYPlZdbmVyaTau0ZbCdzSXbcnfFJJcnGJ2FOe_DFXxA-joytjAsvfCHJGTosm5sSFqGna0nCvSSNbERFbKGbRe9HT7mAofhN7FCto_p2KLZxO6BoeswcPdFvt2Vigv3kM6VDgx0tTNNYeu3UwJ4lbgVeeoXBfXybpPvpMn9fLTph63QT68PPji7h/w400-h220/crumbl-blueberry-crumble-cookie.jpg",
       "id": 9
     },
     {
       "flavor": "Chocolate Covered Strawberry",
       "description": "A chocolate cookies & cream cookie topped with fresh strawberry cream cheese frosting and a drizzle of semi-sweet chocolate.",
-      "rating": 6,
       "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOoX0fIPlbk3FRoFMjIvPeQoSZFjAFH9Xf2ugXaIgWSypQLRSM1Wc2bEC6D_EJsu8A-wZz1iLt10DSgyq6EwBcNePQ7aOGRIv8HYQiMD9JgC7RwS4sS5WCT8wOegzhYSh631amT1XCYs9db_MKLoEYfwaxV6qp1IUEVdSCMQLOIkhCkAU5dOgF7spX/w400-h223/crumbl-chocolate-covered-strawberry-cookies.jpg",
       "id": 10
     },
     {
       "flavor": "Red Velvet",
       "description": "CRUMBL red velvet chocolate chip cookies are the perfect combination of a red velvet cookie and a chocolate chip cookie. They are thick, soft, chewy, and packed with white chocolate chips. With each bite from these red velvet white chip cookies, you’ll fall deeper and deeper back into your fondest childhood memories!",
-      "rating": "4",
       "image": "https://lifestyleofafoodie.com/wp-content/uploads/2021/06/CRUMBL-Red-Velvet-White-Chip-Cookies-21-of-26.jpg",
       "id": 11
     },
     {
       "flavor": "Chocolate Chip",
       "description": "Just like grandma used to make",
-      "rating": "5",
       "image": "https://media2.cltampa.com/cltampa/imager/u/original/13016664/crumbl.jpeg",
       "id": 12
     }
