@@ -24,7 +24,7 @@ To run this project, you need a web browser and a code editor.
 ### Installing
 
 1. Clone the repository to your local environment.
-2. Run "explorer.exe ." in your command terminal
+2. Navigate inside the cloned repository and run "explorer.exe ."
 3. Double click the index.html file to open the Cookie Tracker in your web browser.
 
 ### Usage
