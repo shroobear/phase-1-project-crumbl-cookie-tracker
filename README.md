@@ -8,7 +8,7 @@ Welcome to your very own private collection of flavors and ratings from crumbl c
 - Select ratings for individual flavors
 - Add each week's cookies
 - Search for cookies by name
-- Responsive design that works on desktop and mobile devices
+- Ratings stored in Local Storage so that each user can persist their own ratings.
 
 ## Getting Started
 
@@ -25,15 +25,15 @@ To run this project, you need a web browser and a code editor.
 
 1. Clone the repository to your local environment.
 2. Open the project folder in your code editor.
-3. Open command terminal in the file's directory.
-4. Run 'npm start' in the console to launch the cookie database in a json-server.
-5. Open the `index.html` file in your web browser.
+3. Right click on the `index.html` file in your directory and click "Reveal in Explorer"
+4. Double click on the `index.html` file to open it in your web browser.
 
 ### Usage
 
 1. Type the name of the cookie you're looking for in the search bar.
     - The cookie cards will be filtered in real-time based on your input.
-2. Enter a name, description, rating, and photo link to add a new cookie to the list.
+2. Enter a name, description, and photo link to add a new cookie to the list.
+3. Select a rating for your cookies using the dropdown menus within the cards.
 
 ## Acknowledgements
 
