@@ -12,7 +12,7 @@ Welcome to your very own private collection of flavors and ratings from crumbl c
 
 ## Getting Started
 
-[![Getting Started](./images/cookie-tracker-screenshot.png)](https://www.youtube.com/watch?v=nuTBtCYmvqw "Crumbl Cookie Tracker Walkthrough")
+[![Getting Started](./images/cookie-tracker-screenshot.png)](https://www.youtube.com/watch?v=MLwUgvacKx8 "Crumbl Cookie Tracker Walkthrough")
 Click the image above for a video tutorial
 
 These instructions will help you set up the project on your local machine for development and testing purposes.
@@ -24,9 +24,8 @@ To run this project, you need a web browser and a code editor.
 ### Installing
 
 1. Clone the repository to your local environment.
-2. Open the project folder in your code editor.
-3. Right click on the `index.html` file in your directory and click "Reveal in Explorer"
-4. Double click on the `index.html` file to open it in your web browser.
+2. Run "explorer.exe ." in your command terminal
+3. Double click the index.html file to open the Cookie Tracker in your web browser.
 
 ### Usage
 
